@@ -1,69 +1,76 @@
-<table class="table-container">
-  <tr class="table-content driver1">
-    <td>
-      <span class="position">1</span>
-      <span class="driver-name"><%= @data[0][:driverFirstName]%></span>
-      <span class="driver-surname"><%= @data[0][:driverLastName]%></span>
-      <span class="team">Red Bull Racing</span>
-    </td>
-    <td>
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <table class="table-container">
+        <tr class="table-content driver1">
+          <td>
+            <span class="position">1</span>
+            <span class="driver-name"><%= @data[0][:driverFirstName]%></span>
+            <span class="driver-surname"><%= @data[0][:driverLastName]%></span>
+            <span class="team">Red Bull Racing</span>
+          </td>
+          <td>
           <span class="points"><%= @data[0][:driverPoints]%> PST</span
           ><i class="fas fa-chevron-right"></i>
-    </td>
-  </tr>
-  <tr class="table-content driver2">
-    <td>
-      <span class="position">2</span>
-      <span class="driver-name"><%= @data[1][:driverFirstName]%></span>
-      <span class="driver-surname"><%= @data[1][:driverLastName]%></span>
-      <span class="team">Red Bull Racing</span>
-    </td>
-    <td>
+          </td>
+        </tr>
+        <tr class="table-content driver2">
+          <td>
+            <span class="position">2</span>
+            <span class="driver-name"><%= @data[1][:driverFirstName]%></span>
+            <span class="driver-surname"><%= @data[1][:driverLastName]%></span>
+            <span class="team">Red Bull Racing</span>
+          </td>
+          <td>
           <span class="points"><%= @data[1][:driverPoints]%> PST</span
           ><i class="fas fa-chevron-right"></i>
-    </td>
-  </tr>
-  <tr class="table-content driver4">
-    <td>
-      <span class="position">3</span>
-      <span class="driver-name"><%= @data[2][:driverFirstName]%></span>
-      <span class="driver-surname"><%= @data[2][:driverLastName]%></span>
-      <span class="team">Ferrari</span>
-    </td>
-    <td>
+          </td>
+        </tr>
+        <tr class="table-content driver4">
+          <td>
+            <span class="position">3</span>
+            <span class="driver-name"><%= @data[2][:driverFirstName]%></span>
+            <span class="driver-surname"><%= @data[2][:driverLastName]%></span>
+            <span class="team">Ferrari</span>
+          </td>
+          <td>
           <span class="points"><%= @data[2][:driverPoints]%> PST</span
           ><i class="fas fa-chevron-right"></i>
-    </td>
-  </tr>
-  <tr class="table-content driver4">
-    <td>
-      <span class="position">4</span>
-      <span class="driver-name"><%= @data[3][:driverFirstName]%></span>
-      <span class="driver-surname"><%= @data[3][:driverLastName]%></span>
-      <span class="team">Mercedes</span>
-    </td>
-    <td>
+          </td>
+        </tr>
+        <tr class="table-content driver4">
+          <td>
+            <span class="position">4</span>
+            <span class="driver-name"><%= @data[3][:driverFirstName]%></span>
+            <span class="driver-surname"><%= @data[3][:driverLastName]%></span>
+            <span class="team">Mercedes</span>
+          </td>
+          <td>
           <span class="points"><%= @data[3][:driverPoints]%> PST</span
           ><i class="fas fa-chevron-right"></i>
-    </td>
-  <tr class="table-content driver5">
-    <td>
-      <span class="position">5</span>
-      <span class="driver-name"><%= @data[4][:driverFirstName]%></span>
-      <span class="driver-surname"><%= @data[4][:driverLastName]%></span>
-      <span class="team">Ferrari</span>
-    </td>
-    <td>
+          </td>
+        <tr class="table-content driver5">
+          <td>
+            <span class="position">5</span>
+            <span class="driver-name"><%= @data[4][:driverFirstName]%></span>
+            <span class="driver-surname"><%= @data[4][:driverLastName]%></span>
+            <span class="team">Ferrari</span>
+          </td>
+          <td>
           <span class="points"><%= @data[4][:driverPoints]%> PST</span
           ><i class="fas fa-chevron-right"></i>
-    </td>
-  </tr>
-  <tr class="table-content driver6">
+          </td>
+        </tr>
+        <tr class="table-content driver6">
     <td>
       <span class="position">6</span>
       <span class="driver-name"><%= @data[5][:driverFirstName]%></span>
       <span class="driver-surname"><%= @data[5][:driverLastName]%></span>
       <span class="team">Mercedes</span>
+      <!--    <% if @data[5][:driverURL] != nil %>
+      <span class="team"><%= link_to "Profile", @data[5][:driverURL]%></span>
+              <% end %> -->
     </td>
     <td>
           <span class="points"><%= @data[5][:driverPoints]%> PST</span
@@ -118,6 +125,24 @@
   </tr>
 </table>
 
+  <div class="col">
+
+
+  </div>
+
+  <div class="w-100"></div>
+</div>
+  </div>
+
+
+
+
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%">Season progress : 40%</div>
+  </div>
+
+
+
   <table class="table table-striped">
     <thead>
     <tr>
@@ -138,7 +163,7 @@
         <td><%= driver[:driverCode]%></td>
         <td><span class="points"> <%= driver[:driverPoints]%></span><i class="fas fa-chevron-right"></i></td>
       </tr>
-    <% end %>
+    <% end %> -->
     </tbody>
   </table>
 </div>

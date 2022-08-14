@@ -18,8 +18,8 @@
         <td><%= element[:raceDate]%></td>
         <td><%= element[:raceLocation]%></td>
         <td><%= element[:raceStatus]%></td>
-        <% if element[:raceURL] != nil %>
-          <td><%= link_to "Info", element[:raceURL]%>	 </td>
+        <% if element[:raceURL] != nil && element[:raceStatus] == 'Finished' %>
+          <td><%= link_to "Results", element[:raceURL]%>	 </td>
         <% end %>
       </tr>
     <% end %>
