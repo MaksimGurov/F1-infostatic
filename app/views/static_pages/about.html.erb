@@ -1,2 +1,36 @@
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Race </th>
+      <th>Date </th>
+      <th>Time</th>
+      <th>First Practice Date</th>
+      <th>First Practice Time </th>
+      <th>Second Practice Date</th>
+      <th>Second Practice Time </th>
+      <th>Third Practice Date</th>
+      <th>Third Practice Time </th>
+      <th>Qualifying Time </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @next_race.each do |element| %>
+      <tr>
+        <td><%= element[:raceName]%></td>
+        <td><%= element[:raceDate]%></td>
+        <td><%= element[:raceTime]%></td>
+        <td><%= element[:raceFirstPracticeDate]%></td>
+        <td><%= element[:raceFirstPracticeTime]%></td>
+        <td><%= element[:raceSecondPracticeDate]%></td>
+        <td><%= element[:raceSecondPracticeTime]%></td>
+        <td><%= element[:raceThirdPracticeDate]%></td>
+        <td><%= element[:raceThirdPracticeTime]%></td>
+        <td><%= element[:raceQualifyingTime]%></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>

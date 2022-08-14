@@ -29,5 +29,39 @@ class F1dataCall
   end
 
 
+  def self.next_race
+    url = 'https://ergast.com/api/f1/current.json'
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    data = JSON.parse(response)
+    season_progress = 1
+    data["MRData"]['RaceTable']['Races'].each do |race|
+      if Date.parse(race["date"]) < Date.today
+        season_progress += 1
+      end
+    end
+    next_race_data = "https://ergast.com/api/f1/2022/" + "#{season_progress}.json"
+    uri = URI(next_race_data)
+    response = Net::HTTP.get(uri)
+    data = JSON.parse(response)
+    next_race_info = []
+    data["MRData"]['RaceTable']['Races'].each do |race|
+      next_race_info << {
+          raceName: "#{race["raceName"]}",
+          raceDate: "#{race["date"]}",
+          raceTime: "#{race["time"]}",
+          raceFirstPracticeDate: "#{race["FirstPractice"]["date"]}",
+          raceFirstPracticeTime: "#{race["FirstPractice"]["time"]}",
+          raceSecondPracticeDate: "#{race["SecondPractice"]["date"]}",
+          raceSecondPracticeTime: "#{race["SecondPractice"]["time"]}",
+          raceThirdPracticeTime: "#{race["ThirdPractice"]["time"]}",
+          raceThirdPracticeDate: "#{race["ThirdPractice"]["date"]}",
+          raceQualifyingTime: "#{race["Qualifying"]["time"]}",
+      }
+    end
+    next_race_info
+  end
+
+
 
 end  #class end
