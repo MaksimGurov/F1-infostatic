@@ -44,6 +44,7 @@ class F1dataCall
     response = Net::HTTP.get(uri)
     data = JSON.parse(response)
     next_race_info = []
+    key = ENV["WEATHER_API"]
     data["MRData"]['RaceTable']['Races'].each do |race|
       next_race_info << {
           raceName: "#{race["raceName"]}",
@@ -58,13 +59,13 @@ class F1dataCall
           raceQualifyingTime: "#{race["Qualifying"]["time"]}",
       }
       city = race["Circuit"]["Location"]['locality']
-      weather_info = "http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=b382fd8c4e278b6cc8b4c608fc0bece7&units=imperial"
+      weather_info = "http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=#{key}&units=imperial"
       uri = URI(weather_info)
       response = Net::HTTP.get(uri)
       weather_parsed = JSON.parse(response)
       next_race_info.append(
-          raceWeatherDiscription: "#{weather_parsed['weather'][0]['description']}",
-          raceWeatherTemp: "#{weather_parsed['main']['temp']}"
+          #  raceWeatherDiscription: "#{weather_parsed['weather'][0]['description']}",
+          #  raceWeatherTemp: "#{weather_parsed['main']['temp']}"
       )
     end
     next_race_info
