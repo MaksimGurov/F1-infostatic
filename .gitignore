@@ -34,6 +34,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
+app/services/.weather_api_key.rb
 .idea/workspace.xml
 .idea/.rakeTasks

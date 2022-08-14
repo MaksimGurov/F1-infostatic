@@ -117,6 +117,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    local_time (2.1.0)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -255,6 +256,8 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    wikipedia-client (1.16.0)
+      addressable (~> 2.7)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.0)
@@ -270,6 +273,8 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  local_time
+  nokogiri (~> 1.13, >= 1.13.6)
   pg
   puma (~> 5.0)
   rails (~> 7.0.3)
@@ -284,6 +289,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  wikipedia-client
 
 RUBY VERSION
    ruby 2.7.2p137

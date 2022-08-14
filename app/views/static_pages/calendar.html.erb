@@ -1,0 +1,29 @@
+<div class="container">
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Races </th>
+      <th>Date </th>
+      <th>Location </th>
+      <th>Status</th>
+      <th>Info</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @data.each do |element| %>
+      <tr>
+        <td><%= element[:raceName]%></td>
+        <td><%= element[:raceDate]%></td>
+        <td><%= element[:raceLocation]%></td>
+        <td><%= element[:raceStatus]%></td>
+        <% if element[:raceURL] != nil %>
+          <td><%= link_to "Info", element[:raceURL]%>	 </td>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>
