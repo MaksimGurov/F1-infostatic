@@ -14,6 +14,7 @@
  *= require_self
  */
 @import "bootstrap";
+@import "flag-icon";
 
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
 /* VARIABLES */
@@ -21,6 +22,28 @@
 html {
   position: relative;
   min-height: 100%;
+  font-family: "Titillium Web", sans-serif;
+}
+
+body {
+  color: white !important;
+  background-color: #000000;
+  background-image: url("https://img5.goodfon.ru/original/1366x768/a/6f/formula-1-logo-red.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.navbar a {
+  color: white !important;
+}
+
+th {
+  color: white !important;
+}
+
+.constructor_table {
+  max-width: 50%;
+  margin: auto;
 }
 
 .Site {
@@ -31,6 +54,7 @@ html {
 
 .Site-content {
   flex: 1;
+  margin-bottom: 5% !important;
 }
 
 
@@ -72,8 +96,6 @@ html {
 .table-container tr {
   display: flex;
   padding: 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -108,7 +130,7 @@ html {
 
 .table-container tr.table-content td .team {
   font-size: 1rem;
-  color: blue;
+  color: white;
   margin-left: 10px;
 }
 
@@ -121,7 +143,7 @@ html {
 
 .table-container tr.table-content td i {
   margin-left: 20px;
-  color: blue;
+  color: white;
   font-size: 18px;
 }
 
