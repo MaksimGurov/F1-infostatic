@@ -14,10 +14,10 @@
     <%= yield :head %>
   </head>
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">>
+  <nav class="navbar bg-dark navbar-expand">
     <a class="navbar-brand" href="#">F1.info-static</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+
+
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -34,15 +34,16 @@
         <li class="nav-item">
           <a class="nav-link" href="/next">Next Race Info</a>
         </li>
+        <li class="news">
+          <a class="nav-link" href="/news">News</a>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 47%">Season progress : 40%</div>
-  </div>
 
-  <body>
+
+  <body class="bg-dark">
   <div class="Site-content">
     <%= yield %>
   </div>

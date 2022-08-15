@@ -17,6 +17,7 @@ class F1dataCall
           raceName: "#{race["raceName"]}",
           raceDate: "#{race["date"]}",
           raceLocation: "#{race["Circuit"]["Location"]["locality"]}",
+          raceCountry: "#{race["Circuit"]["Location"]["country"]}",
           raceStatus: (Date.parse(race["date"]) < Date.today ? "Finished" : nil),
           raceURL: "#{race["url"]}"
       }
@@ -24,9 +25,9 @@ class F1dataCall
       if Date.parse(race["date"]) < Date.today
         season_progress += 1
       end
-      @season_data << {PassedRaces: "#{season_progress}"}
+        #@season_data << {PassedRaces: "#{season_progress}"}
     end
-    @season_data
+    p  @season_data
   end
 
 
@@ -50,6 +51,7 @@ class F1dataCall
     id_counter = 0
     data["MRData"]['RaceTable']['Races'].each do |race|
       next_race_info << {
+          raceCountry: "#{race["Circuit"]["Location"]["country"]}",
           raceName: "#{race["raceName"]}",
           raceDate: "#{race["date"]}",
           raceTime: "#{race["time"].to_time.in_time_zone("Pacific Time (US & Canada)")}",
@@ -85,7 +87,7 @@ class F1dataCall
     season_standings_data = []
     parsed_data = data['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
     parsed_data.each do |driver|
-
+      driver
       season_standings_data << {
           driverPosition: "#{driver['position']}",
           driverFirstName: "#{driver['Driver']['givenName']}",
@@ -93,13 +95,14 @@ class F1dataCall
           driverCode: "#{driver['Driver']['code']}",
           driverPoints: "#{driver['points']}",
           driverURL: "#{driver['Driver']['url']}",
-          driverConstructor: "#{driver['Constructors'][0]['name']}"
+          driverConstructor: "#{driver['Constructors'][0]['name']}",
+          driverNationality: "#{driver['Driver']['nationality']}"
       }
 
     end
 
 
-     season_standings_data
+    p  season_standings_data
 
   end
 
@@ -120,7 +123,7 @@ class F1dataCall
           constructorName:"#{constructor['Constructor']['name']}"
       }
     end
-    constructor_standings_data
+    p constructor_standings_data
   end
 
 
@@ -138,9 +141,10 @@ class F1dataCall
           constructor: "#{result['Constructor']['name']}",
           status: "#{result['status']}",
           # time: "#{result['time']['time]']}"
+          time: result['Time']
       }
     end
-    race_results_data
+    p race_results_data
 
   end
 

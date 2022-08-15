@@ -1,9 +1,10 @@
 <div class="container">
 
-  <table class="table table-striped border-primary  ">
+  <table class="table table-striped border-primary  table-dark.table-sm constructor_table">
     <thead>
     <tr>
       <th>Position </th>
+      <th></th>
       <th>Team </th>
       <th>Points </th>
       <th>Wins </th>
@@ -14,15 +15,14 @@
     <tbody>
     <% @constructor_data.each do |constructor| %>
       <tr>
-        <td><%= constructor[:constructorPosition]%></td>
+        <td><%= constructor[:constructorPosition] %></td>
+        <td><%= car_image(constructor[:constructorName])%> </td>
         <td><%= constructor[:constructorName]%></td>
         <td><%= constructor[:constructorPoints]%></td>
         <td><%= constructor[:constructorWins]%></td>
-
       </tr>
     <% end %>
     </tbody>
-    <caption>Team Standings</caption>
   </table>
 
 </div>

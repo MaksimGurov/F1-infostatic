@@ -1,10 +1,11 @@
 
   <div class="row align-items-start">
     <div class="col">
-      <table class="table-container">
+      <table class="table-container driver_standings">
         <tr class="table-content <%=  @data[0][:driverConstructor]%>" >
           <td>
             <span class="position">1</span>
+            <span class="position"><%= location_flag(@data[0][:driverNationality])%></span>
             <span class="driver-name"><%= @data[0][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[0][:driverLastName]%></span>
             <span class="team"><%= @data[0][:driverConstructor]%></span>
@@ -17,6 +18,7 @@
         <tr class="table-content driver2 <%= @data[1][:driverConstructor]%>">
           <td>
             <span class="position">2</span>
+            <span class="position"><%= location_flag(@data[1][:driverNationality])%></span>
             <span class="driver-name"><%= @data[1][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[1][:driverLastName]%></span>
             <span class="team"><%= @data[1][:driverConstructor]%></span>
@@ -29,6 +31,7 @@
         <tr class="table-content driver3 <%= @data[2][:driverConstructor]%>">
           <td>
             <span class="position">3</span>
+            <span class="position"><%= location_flag(@data[2][:driverNationality])%></span>
             <span class="driver-name"><%= @data[2][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[2][:driverLastName]%></span>
             <span class="team"><%= @data[2][:driverConstructor]%></span>
@@ -41,6 +44,7 @@
         <tr class="table-content driver4 <%= @data[3][:driverConstructor]%>">
           <td>
             <span class="position">4</span>
+            <span class="position"><%= location_flag(@data[3][:driverNationality])%></span>
             <span class="driver-name"><%= @data[3][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[3][:driverLastName]%></span>
             <span class="team"><%= @data[3][:driverConstructor]%></span>
@@ -52,6 +56,7 @@
         <tr class="table-content <%= @data[4][:driverConstructor]%>">
           <td>
             <span class="position">5</span>
+            <span class="position"><%= location_flag(@data[4][:driverNationality])%></span>
             <span class="driver-name"><%= @data[4][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[4][:driverLastName]%></span>
             <span class="team"><%= @data[4][:driverConstructor]%></span>
@@ -64,6 +69,7 @@
         <tr class="table-content driver6 <%= @data[5][:driverConstructor]%>" >
           <td>
             <span class="position">6</span>
+            <span class="position"><%= location_flag(@data[5][:driverNationality])%></span>
             <span class="driver-name"><%= @data[5][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[5][:driverLastName]%></span>
             <span class="team"><%= @data[5][:driverConstructor]%></span>
@@ -79,6 +85,7 @@
         <tr class="table-content driver7 <%= @data[6][:driverConstructor]%>">
           <td>
             <span class="position">7</span>
+            <span class="position"><%= location_flag(@data[6][:driverNationality])%></span>
             <span class="driver-name"><%= @data[6][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[6][:driverLastName]%></span>
             <span class="team"><%= @data[6][:driverConstructor]%></span>
@@ -91,6 +98,7 @@
         <tr class="table-content driver8 <%= @data[7][:driverConstructor]%>">
           <td>
             <span class="position">8</span>
+            <span class="position"><%= location_flag(@data[7][:driverNationality])%></span>
             <span class="driver-name"><%= @data[7][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[7][:driverLastName]%></span>
             <span class="team"><%= @data[7][:driverConstructor]%></span>
@@ -102,6 +110,7 @@
         <tr class="table-content driver9 <%= @data[8][:driverConstructor]%>">
           <td>
             <span class="position">9</span>
+            <span class="position"><%= location_flag(@data[8][:driverNationality])%></span>
             <span class="driver-name"><%= @data[8][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[8][:driverLastName]%></span>
             <span class="team"><%= @data[8][:driverConstructor]%></span>
@@ -113,6 +122,7 @@
         <tr class="table-content driver10 <%= @data[9][:driverConstructor]%>">
           <td>
             <span class="position">10</span>
+            <span class="position"><%= location_flag(@data[9][:driverNationality])%></span>
             <span class="driver-name"><%= @data[9][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[9][:driverLastName]%></span>
             <span class="team"><%= @data[9][:driverConstructor]%></span>
@@ -127,20 +137,9 @@
   </div>
 
 
-    <div class="col align-items-end">
 
-      <h1>Latest News</h1>
 
-      <div class="card w-70" style="width: 30rem;">
-        <ul class="list-group list-group-flush">
-          <% @race_news.each do |news| %>
-            <li class="list-group-item"> <%= link_to news[:title], news[:link] %> <%= news[:pubDate] %> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
-              <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
-              <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
-            </svg></li>
-          <% end %>
-        </ul>
-      </div>
+
     </div>
 </div>
 
