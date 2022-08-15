@@ -213,6 +213,8 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
+    rss (0.2.9)
+      rexml
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -286,6 +288,7 @@ DEPENDENCIES
   rails_12factor
   redis (~> 4.0)
   rspec-rails
+  rss
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)

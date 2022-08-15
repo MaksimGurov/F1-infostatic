@@ -44,6 +44,7 @@ gem 'local_time'
 gem 'nokogiri', '~> 1.13', '>= 1.13.6'
 gem "wikipedia-client"
 gem 'dotenv-rails'
+gem 'rss'
 # Use Sass to process CSS
 # gem "sassc-rails"
 

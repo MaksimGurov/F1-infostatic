@@ -29,13 +29,24 @@
           <a class="nav-link" href="/calendar">Season 2022 Calendar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/next">Next Race</a>
+          <a class="nav-link" href="/next">Next Race Info</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <body class='d-flex flex-column min-vh-100'>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%">Season progress : 40%</div>
+
+  </div>
+
+  <body class=''>
     <%= yield %>
+    <footer class="bg-dark  text-center text-white footer">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="guromaksim.github.io">guromaksim.github.io</a>
+      </div>
+    </footer>
   </body>
 </html>
