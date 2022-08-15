@@ -22,7 +22,10 @@ class StaticPagesController < ApplicationController
 
   def constructors
     @constructor_data = F1dataCall.constructor_standings
+  end
 
+  def race_results
+    @race_results = F1dataCall.race_results(params[:id])
   end
 
   def calendar

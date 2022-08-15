@@ -3,24 +3,28 @@
   <table class="table table-striped table-hover table-bordered border-primary">
     <thead>
     <tr>
+      <th>#</th>
       <th>Races </th>
       <th>Date </th>
       <th>Location </th>
       <th>Status</th>
-      <th>Info</th>
+      <th>Wiki</th>
+      <th>Results</th>
     </tr>
     </thead>
 
     <tbody>
     <% @data.each do |element| %>
       <tr>
+        <td><%= element[:raceID]%></td>
         <td><%= element[:raceName]%></td>
         <td><%= element[:raceDate]%></td>
         <td><%= element[:raceLocation]%></td>
         <td><%= element[:raceStatus]%></td>
         <% if element[:raceURL] != nil && element[:raceStatus] == 'Finished' %>
           <td> <%= link_to "Results", element[:raceURL]%>	 </td>
-        <% end %>
+          <td> <%= link_to "Race Results", results_path(:id =>  element[:raceID]) , :class => "btn btn-primary" %>  </td>
+      <% end %>
       </tr>
     <% end %>
     </tbody>

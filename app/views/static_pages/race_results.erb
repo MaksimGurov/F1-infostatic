@@ -1,0 +1,31 @@
+<div class="container">
+
+  <table class="table table-striped border-primary  ">
+    <thead>
+    <tr>
+      <th>Position </th>
+      <th>Team </th>
+      <th>Points </th>
+      <th>Wins </th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <% @race_results.each do |result| %>
+
+      <tr>
+        <td><%= result[:position]%></td>
+        <td><%= result[:driverFirstName]%></td>
+        <td><%= result[:driverLastName]%></td>
+        <td><%= result[:status]%></td>
+        <td><%= result[:time]%></td>
+      </tr>
+
+    <% end %>
+
+    </tbody>
+    <caption>Team Standings</caption>
+  </table>
+
+</div>

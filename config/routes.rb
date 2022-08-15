@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/constructor_standings', to: 'static_pages#constructors'
   get '/calendar', to: 'static_pages#calendar'
   get '/next', to: 'static_pages#about'
+  get '/raceresults/:id', to: 'static_pages#race_results',  as: 'results'
   # Defines the root path route ("/")
   # root "articles#index"
 end

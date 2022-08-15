@@ -76,7 +76,7 @@
 
       <script>
         // Set the date we're counting down to
-        var countDownDate = new Date("July 3, 2022 07:00:00").getTime();
+        var countDownDate = new Date("July 10, 2022 08:00:00").getTime();
 
         // Update the count down every 1 second
         var x = setInterval(function() {
@@ -100,7 +100,7 @@
           // If the count down is finished, write some text
           if (distance < 0) {
             clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
+            document.getElementById("demo").innerHTML = "Race day!";
           }
         }, 1000);
       </script>
@@ -114,7 +114,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <img src="/assets/SilverStone.png" /></div>
+      <img src="/assets/Austria_Circuit.png" /></div>
     <div class="col">
       <%=  circuit_info(@next_race[0][:raceName]) %>
 

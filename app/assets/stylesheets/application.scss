@@ -15,8 +15,23 @@
  */
 @import "bootstrap";
 
-
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
 /* VARIABLES */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
 
 
 .Ferrari {
@@ -172,4 +187,13 @@
 
 .table-container .table-content.driver10 td {
   margin-left: 0;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
 }
