@@ -1,12 +1,6 @@
-<div>
-
-</div>
-
-
 <div class="container">
-  <div class="row">
-    <div class="col-9">
-
+  <div class="row align-items-start">
+    <div class="col">
       <table class="table-container">
         <tr class="table-content driver1">
           <td>
@@ -16,8 +10,8 @@
             <span class="team">Red Bull Racing</span>
           </td>
           <td>
-            <span class="points"><%= @data[0][:driverPoints]%> PST</span
-            ><i class="fas fa-chevron-right"></i>
+             <span class="points"><%= @data[0][:driverPoints]%> PTS</span>
+            <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
         <tr class="table-content driver2">
@@ -28,8 +22,8 @@
             <span class="team">Red Bull Racing</span>
           </td>
           <td>
-            <span class="points"><%= @data[1][:driverPoints]%> PST</span
-            ><i class="fas fa-chevron-right"></i>
+            <span class="points"><%= @data[1][:driverPoints]%> PTS</span>
+            <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
         <tr class="table-content driver4">
@@ -40,8 +34,8 @@
             <span class="team">Ferrari</span>
           </td>
           <td>
-            <span class="points"><%= @data[2][:driverPoints]%> PST</span
-            ><i class="fas fa-chevron-right"></i>
+            <span class="points"><%= @data[2][:driverPoints]%> PTS</span>
+            <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
         <tr class="table-content driver4">
@@ -52,8 +46,8 @@
             <span class="team">Mercedes</span>
           </td>
           <td>
-            <span class="points"><%= @data[3][:driverPoints]%> PST</span
-            ><i class="fas fa-chevron-right"></i>
+            <span class="points"><%= @data[3][:driverPoints]%> PTS</span>
+            <i class="fas fa-chevron-right"></i>
           </td>
         <tr class="table-content driver5">
           <td>
@@ -63,8 +57,8 @@
             <span class="team">Ferrari</span>
           </td>
           <td>
-            <span class="points"><%= @data[4][:driverPoints]%> PST</span
-            ><i class="fas fa-chevron-right"></i>
+            <span class="points"><%= @data[4][:driverPoints]%> PTS</span>
+            <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
         <tr class="table-content driver6">
@@ -78,8 +72,8 @@
             <% end %> -->
           </td>
           <td>
-            <span class="points"><%= @data[5][:driverPoints]%> PST</span
-            ><i class="fas fa-chevron-right"></i>
+            <span class="points"><%= @data[5][:driverPoints]%> PTS</span>
+            <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
         <tr class="table-content driver7">
@@ -90,8 +84,8 @@
             <span class="team">MacLaren</span>
           </td>
           <td>
-            <span class="points"><%= @data[5][:driverPoints]%> PST</span
-            ><i class="fas fa-chevron-right"></i>
+            <span class="points"><%= @data[5][:driverPoints]%> PTS</span>
+            <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
         <tr class="table-content driver8">
@@ -102,8 +96,8 @@
             <span class="team">Alpha Romeo</span>
           </td>
           <td>
-            <span class="points"><%= @data[7][:driverPoints]%> PST</span
-            ><i class="fas fa-chevron-right"></i>
+            <span class="points"><%= @data[7][:driverPoints]%> PTS</span>
+            <i class="fas fa-chevron-right"></i>
           </td>
         <tr class="table-content driver9">
           <td>
@@ -113,8 +107,8 @@
             <span class="team">Alpine</span>
           </td>
           <td>
-            <span class="points"><%= @data[8][:driverPoints]%> PST</span
-            ><i class="fas fa-chevron-right"></i>
+            <span class="points"><%= @data[8][:driverPoints]%> PTS</span>
+            <i class="fas fa-chevron-right"></i>
           </td>
         <tr class="table-content driver10">
           <td>
@@ -124,19 +118,48 @@
             <span class="team">Alpine</span>
           </td>
           <td>
-            <span class="points"><%= @data[9][:driverPoints]%> PST</span
-            ><i class="fas fa-chevron-right"></i>
+            <span class="points"><%= @data[9][:driverPoints]%> PTS</span>
+            <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
       </table>
 
   </div>
 
-    <div class="col-3 container">
+    <div class="col row align-items-end">
+      <h1>Teams Static</h1>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Position </th>
+          <th>Team </th>
+          <th>Points </th>
+          <th>Wins </th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @constructor_data.each do |constructor| %>
+          <tr>
+            <td><%= constructor[:constructorPosition]%></td>
+            <td><%= constructor[:constructorName]%></td>
+            <td><%= constructor[:constructorPoints]%></td>
+            <td><%= constructor[:constructorWins]%></td>
+
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="col">
 
       <h1>Latest News</h1>
 
-      <div class="card" style="width: 20rem;">
+      <div class="card w-70" style="width: 20rem;">
         <ul class="list-group list-group-flush">
           <% @race_news.each do |news| %>
             <li class="list-group-item"> <%= link_to news[:title], news[:link] %> <%= news[:pubDate] %> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
@@ -153,34 +176,3 @@
   <div class="w-100"></div>
 </div>
   </div>
-
-
-
-
-
-
-
-<!--  <table class="table table-striped">-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--      <th>Position </th>-->
-<!--      <th>First Name </th>-->
-<!--      <th>Last Name </th>-->
-<!--      <th>Code</th>-->
-<!--      <th>Points </th>-->
-<!--    </tr>-->
-    </thead>
-
-    <tbody>
-    <%# @data.each do |driver| %>
-<!--      <tr>-->
-<!--        <td><%#= driver[:driverPosition]%></td>-->
-<!--        <td><%#= driver[:driverFirstName]%></td>-->
-<!--        <td><%#= driver[:driverLastName]%></td>-->
-<!--        <td><%#= driver[:driverCode]%></td>-->
-<!--        <td><span class="points"> <%#= driver[:driverPoints]%></span><i class="fas fa-chevron-right"></i></td>-->
-<!--      </tr>-->
-<!--    <%# end %> -->-->
-<!--    </tbody>-->
-<!--  </table>-->
-<!--</div>-->

@@ -15,6 +15,8 @@ class StaticPagesController < ApplicationController
         }
 
       end
+
+      @constructor_data = F1dataCall.constructor_standings
       @race_news
     end
   end

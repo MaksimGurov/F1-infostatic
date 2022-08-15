@@ -100,6 +100,27 @@ class F1dataCall
   end
 
 
+  def self.constructor_standings
+
+    url = "http://ergast.com/api/f1/current/constructorStandings.json"
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    data = JSON.parse(response)
+    constructor_standings_data = []
+    parsed_data = data['MRData']['StandingsTable']['StandingsLists'][0]['ConstructorStandings']
+    parsed_data.each do |constructor|
+      constructor_standings_data << {
+          constructorPosition: "#{constructor['position']}",
+          constructorPoints: "#{constructor['points']}",
+          constructorWins: "#{constructor['wins']}",
+          constructorName:"#{constructor['Constructor']['name']}"
+      }
+    end
+    constructor_standings_data
+  end
+
+
+
 
 
 
