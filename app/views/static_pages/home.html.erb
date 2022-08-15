@@ -2,71 +2,71 @@
   <div class="row align-items-start">
     <div class="col">
       <table class="table-container">
-        <tr class="table-content driver1">
+        <tr class="table-content <%=  @data[0][:driverConstructor]%>" >
           <td>
             <span class="position">1</span>
             <span class="driver-name"><%= @data[0][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[0][:driverLastName]%></span>
-            <span class="team">Red Bull Racing</span>
+            <span class="team"><%= @data[0][:driverConstructor]%></span>
           </td>
           <td>
              <span class="points"><%= @data[0][:driverPoints]%> PTS</span>
             <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
-        <tr class="table-content driver2">
+        <tr class="table-content driver2 <%= @data[1][:driverConstructor]%>">
           <td>
             <span class="position">2</span>
             <span class="driver-name"><%= @data[1][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[1][:driverLastName]%></span>
-            <span class="team">Red Bull Racing</span>
+            <span class="team"><%= @data[1][:driverConstructor]%></span>
           </td>
           <td>
             <span class="points"><%= @data[1][:driverPoints]%> PTS</span>
             <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
-        <tr class="table-content driver4">
+        <tr class="table-content driver3 <%= @data[2][:driverConstructor]%>">
           <td>
             <span class="position">3</span>
             <span class="driver-name"><%= @data[2][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[2][:driverLastName]%></span>
-            <span class="team">Ferrari</span>
+            <span class="team"><%= @data[2][:driverConstructor]%></span>
           </td>
           <td>
             <span class="points"><%= @data[2][:driverPoints]%> PTS</span>
             <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
-        <tr class="table-content driver4">
+        <tr class="table-content driver4 <%= @data[3][:driverConstructor]%>">
           <td>
             <span class="position">4</span>
             <span class="driver-name"><%= @data[3][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[3][:driverLastName]%></span>
-            <span class="team">Mercedes</span>
+            <span class="team"><%= @data[3][:driverConstructor]%></span>
           </td>
           <td>
             <span class="points"><%= @data[3][:driverPoints]%> PTS</span>
             <i class="fas fa-chevron-right"></i>
           </td>
-        <tr class="table-content driver5">
+        <tr class="table-content <%= @data[4][:driverConstructor]%>">
           <td>
             <span class="position">5</span>
             <span class="driver-name"><%= @data[4][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[4][:driverLastName]%></span>
-            <span class="team">Ferrari</span>
+            <span class="team"><%= @data[4][:driverConstructor]%></span>
           </td>
           <td>
             <span class="points"><%= @data[4][:driverPoints]%> PTS</span>
             <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
-        <tr class="table-content driver6">
+        <tr class="table-content driver6 <%= @data[5][:driverConstructor]%>" >
           <td>
             <span class="position">6</span>
             <span class="driver-name"><%= @data[5][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[5][:driverLastName]%></span>
-            <span class="team">Mercedes</span>
+            <span class="team"><%= @data[5][:driverConstructor]%></span>
             <!--    <% if @data[5][:driverURL] != nil %>
             <span class="team"><%= link_to "Profile", @data[5][:driverURL]%></span>
             <% end %> -->
@@ -76,46 +76,46 @@
             <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
-        <tr class="table-content driver7">
+        <tr class="table-content driver7 <%= @data[6][:driverConstructor]%>">
           <td>
             <span class="position">7</span>
             <span class="driver-name"><%= @data[6][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[6][:driverLastName]%></span>
-            <span class="team">MacLaren</span>
+            <span class="team"><%= @data[6][:driverConstructor]%></span>
           </td>
           <td>
-            <span class="points"><%= @data[5][:driverPoints]%> PTS</span>
+            <span class="points"><%= @data[6][:driverPoints]%> PTS</span>
             <i class="fas fa-chevron-right"></i>
           </td>
         </tr>
-        <tr class="table-content driver8">
+        <tr class="table-content driver8 <%= @data[7][:driverConstructor]%>">
           <td>
             <span class="position">8</span>
             <span class="driver-name"><%= @data[7][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[7][:driverLastName]%></span>
-            <span class="team">Alpha Romeo</span>
+            <span class="team"><%= @data[7][:driverConstructor]%></span>
           </td>
           <td>
             <span class="points"><%= @data[7][:driverPoints]%> PTS</span>
             <i class="fas fa-chevron-right"></i>
           </td>
-        <tr class="table-content driver9">
+        <tr class="table-content driver9 <%= @data[8][:driverConstructor]%>">
           <td>
             <span class="position">9</span>
             <span class="driver-name"><%= @data[8][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[8][:driverLastName]%></span>
-            <span class="team">Alpine</span>
+            <span class="team"><%= @data[8][:driverConstructor]%></span>
           </td>
           <td>
             <span class="points"><%= @data[8][:driverPoints]%> PTS</span>
             <i class="fas fa-chevron-right"></i>
           </td>
-        <tr class="table-content driver10">
+        <tr class="table-content driver10 <%= @data[9][:driverConstructor]%>">
           <td>
             <span class="position">10</span>
             <span class="driver-name"><%= @data[9][:driverFirstName]%></span>
             <span class="driver-surname"><%= @data[9][:driverLastName]%></span>
-            <span class="team">Alpine</span>
+            <span class="team"><%= @data[9][:driverConstructor]%></span>
           </td>
           <td>
             <span class="points"><%= @data[9][:driverPoints]%> PTS</span>
@@ -145,6 +145,8 @@
     </div>
 
 
-  <div class="w-100"></div>
+
 </div>
   </div>
+
+<p id="demo"></p>

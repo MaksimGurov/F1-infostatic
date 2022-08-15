@@ -41,7 +41,7 @@
 
     <tbody>
     <% @next_race.each do |element| %>
-      <tr>
+      <tr class="table-info">
         <td><%= element[:raceName]%></td>
         <td><%= element[:raceDate]%></td>
         <td><%= element[:raceTime]%></td>
@@ -57,7 +57,7 @@
 
   <% end %>
   <div class="container">
-    <p>
+    <button class=" btn btn-warning">
       Weather is currently :
       <%=  @next_race.last[:raceWeatherDiscription] %> with a temperature of
       <%=  @next_race.last[:raceWeatherTemp] %>.
@@ -65,7 +65,49 @@
         <path d="M8 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
         <path d="M8 0a2.5 2.5 0 0 0-2.5 2.5v7.55a3.5 3.5 0 1 0 5 0V2.5A2.5 2.5 0 0 0 8 0zM6.5 2.5a1.5 1.5 0 1 1 3 0v7.987l.167.15a2.5 2.5 0 1 1-3.333 0l.166-.15V2.5z"/>
       </svg>
-    </p>
+    </button>
+
+    <p>
+
+      <button id="demo" class="btn btn-primary"> </button>
+
+      Left  until the race!
+
+
+      <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("July 3, 2022 07:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+          // Get today's date and time
+          var now = new Date().getTime();
+
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Display the result in the element with id="demo"
+          document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+          // If the count down is finished, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+      </script>
+
+  </div>
+  </div>
+
 
   </div>
 </div>

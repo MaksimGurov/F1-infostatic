@@ -1,6 +1,6 @@
 <div class="container">
 
-  <table class="table table-striped">
+  <table class="table table-striped table-hover table-bordered border-primary">
     <thead>
     <tr>
       <th>Races </th>
@@ -19,7 +19,7 @@
         <td><%= element[:raceLocation]%></td>
         <td><%= element[:raceStatus]%></td>
         <% if element[:raceURL] != nil && element[:raceStatus] == 'Finished' %>
-          <td><%= link_to "Results", element[:raceURL]%>	 </td>
+          <td> <%= link_to "Results", element[:raceURL]%>	 </td>
         <% end %>
       </tr>
     <% end %>

@@ -49,20 +49,20 @@ class F1dataCall
       next_race_info << {
           raceName: "#{race["raceName"]}",
           raceDate: "#{race["date"]}",
-          raceTime: "#{race["time"]}",
+          raceTime: "#{race["time"].to_time.in_time_zone("Pacific Time (US & Canada)")}",
           raceFirstPracticeDate: "#{race["FirstPractice"]["date"]}",
-          raceFirstPracticeTime: "#{race["FirstPractice"]["time"]}",
+          raceFirstPracticeTime: "#{race["FirstPractice"]["time"].to_time.in_time_zone("Pacific Time (US & Canada)")}",
           raceSecondPracticeDate: "#{race["SecondPractice"]["date"]}",
-          raceSecondPracticeTime: "#{race["SecondPractice"]["time"]}",
-          raceThirdPracticeTime: "#{race["ThirdPractice"]["time"]}",
+          raceSecondPracticeTime: "#{race["SecondPractice"]["time"].to_time.in_time_zone("Pacific Time (US & Canada)")}",
+          raceThirdPracticeTime: "#{race["ThirdPractice"]["time"].to_time.in_time_zone("Pacific Time (US & Canada)")}",
           raceThirdPracticeDate: "#{race["ThirdPractice"]["date"]}",
-          raceQualifyingTime: "#{race["Qualifying"]["time"]}",
+          raceQualifyingTime: "#{race["Qualifying"]["time"].to_time.in_time_zone("Pacific Time (US & Canada)")}",
       }
       city = race["Circuit"]["Location"]['locality']
       weather_info = "http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=#{key}&units=imperial"
       uri = URI(weather_info)
       response = Net::HTTP.get(uri)
-      weather_parsed = JSON.parse(response)
+      p  weather_parsed = JSON.parse(response)
       next_race_info.append(
           #  raceWeatherDiscription: "#{weather_parsed['weather'][0]['description']}",
           #  raceWeatherTemp: "#{weather_parsed['main']['temp']}"
@@ -82,7 +82,7 @@ class F1dataCall
     season_standings_data = []
     parsed_data = data['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
     parsed_data.each do |driver|
-      driver['driver']
+
       season_standings_data << {
           driverPosition: "#{driver['position']}",
           driverFirstName: "#{driver['Driver']['givenName']}",
@@ -90,6 +90,7 @@ class F1dataCall
           driverCode: "#{driver['Driver']['code']}",
           driverPoints: "#{driver['points']}",
           driverURL: "#{driver['Driver']['url']}",
+          driverConstructor: "#{driver['Constructors'][0]['name']}"
       }
 
     end
