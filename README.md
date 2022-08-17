@@ -1,4 +1,4 @@
-# Application create in Ruby on Rails
+# The creation of this application is build on Ruby on Rails
 
 Web App to get Formula 1 statistics and current season information.
 Special thanks to Ergast Developer API for the data.
@@ -13,3 +13,11 @@ Special thanks to Ergast Developer API for the data.
       gem 'pg'
       gem 'rails_12factor'
     end
+    
+#Для запуска приложения:
+
+    You need to do:
+    
+    cd f1-infostatic
+    Bundle install \ Bundle update  # Gems
+    rails server                    # To run application
