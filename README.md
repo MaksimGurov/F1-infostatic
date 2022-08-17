@@ -1,24 +1,15 @@
-# README
+# Application create in Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Web App to get Formula 1 statistics and current season information.
+Special thanks to Ergast Developer API for the data.
 
-Things you may want to cover:
+Взяты новости из: https://www.f1news.ru/news/f1-5599.html
+Экспорт новостей в формате RSS
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    ruby "2.7.2"
+    "rails", "~> 7.0.3"
+    
+    group :production do
+      gem 'pg'
+      gem 'rails_12factor'
+    end
