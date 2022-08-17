@@ -1,0 +1,24 @@
+<table class="table table-striped border-primary  table-dark  .table-sm constructor_table">
+
+  <th>Position </th>
+  <th>First Name </th>
+  <th>Last Name </th>
+  <th>Team </th>
+  <th>Code</th>
+  <th>Points </th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <% @data.each do |driver| %>
+    <tr>
+      <td><%= driver[:driverPosition]%></td>
+      <td><%= driver[:driverFirstName]%></td>
+      <td><%= driver[:driverLastName]%></td>
+      <td><%= driver[:driverConstructor]%></td>
+      <td><%= driver[:driverCode]%></td>
+      <td><span class="points"> <%= driver[:driverPoints]%></span><i class="fas fa-chevron-right"></i></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

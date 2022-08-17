@@ -4,6 +4,10 @@ class StaticPagesController < ApplicationController
     @data	= F1dataCall.season_standings
   end
 
+  def full_standings
+    @data	= F1dataCall.season_standings
+  end
+
   def news
     @race_news = []
     url = 'https://www.f1technical.net/rss/news.xml'
