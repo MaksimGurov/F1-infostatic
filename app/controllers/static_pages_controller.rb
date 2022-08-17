@@ -10,15 +10,17 @@ class StaticPagesController < ApplicationController
 
   def news
     @race_news = []
-    url = 'https://www.f1technical.net/rss/news.xml'
+    url = 'https://www.f1news.ru/export/news.xml'
       URI.open(url) do |rss|
-        feed = RSS::Parser.parse(rss)
-        puts "Title: #{feed.channel.title}"
+        feed = RSS::Parser.parse(rss, do_validate=false)
+        "Title: #{feed.channel.title}"
         feed.items.each do |item|
           @race_news << {
               title: "#{item.title}",
               link: "#{item.link}",
-              pubDate: "#{item.pubDate}"
+              pubDate: "#{item.pubDate}",
+              imageLink: "#{item.enclosure.url}",
+              description: "#{item.description}"
           }
         end
     end
@@ -47,6 +49,18 @@ class StaticPagesController < ApplicationController
       end
     end
     @finished_races
+  end
+
+  def historical_data
+    if params[:date] == nil
+      @year = params[:year]
+      @data = F1dataCall.historical_drivers_standings(@year)
+      @constructor_data = F1dataCall.historical_constructor_standings(@year)
+    else
+      @year = params[:date][:year]
+      @data = F1dataCall.historical_drivers_standings(@year)
+      @constructor_data = F1dataCall.historical_constructor_standings(@year)
+    end
   end
 
   def about

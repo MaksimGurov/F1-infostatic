@@ -1,0 +1,78 @@
+<div class="container">
+  <h1 class="year"> <%= @year %> Season Results</h1>
+</div>
+
+<div class="row">
+
+  <div class="col">
+    <form action=<%= historical_data_path %> >
+      <div class="form-group">
+        <%= select_year(Date.today, :start_year => Date.today.year, :end_year =>  Date.today.year-77) %>
+      </div>
+      <button type="submit" class="btn btn-primary">Load Season Results</button>
+    </form>
+
+    <% if @data != nil %>
+
+      <table class="table caption-top table-striped border-primary  table-dark  .table-sm constructor_table">
+
+      <th>Position </th>
+        <th>First Name </th>
+        <th>Last Name </th>
+        <th>Team </th>
+        <th>Code</th>
+        <th>Points </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <% @data.each do |driver| %>
+          <tr>
+            <td><%= driver[:driverPosition]%></td>
+            <td><%= driver[:driverFirstName]%></td>
+            <td><%= driver[:driverLastName]%></td>
+            <td><%= driver[:driverConstructor]%></td>
+            <td><%= driver[:driverCode]%></td>
+            <td><span class="points"> <%= driver[:driverPoints]%></i></span></td>
+          </tr>
+        <% end %>
+        </tbody>
+        <caption>Drivers' Standings</caption>
+      </table>
+    <% end %>
+
+  </div>
+
+  <div class="col">
+
+
+    <table class="table caption-top table-striped border-primary  table-dark.table-sm constructor_table">
+
+    <thead>
+      <tr>
+        <th>Position </th>
+
+        <th>Team </th>
+        <th>Points </th>
+        <th>Wins </th>
+
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @constructor_data.each do |constructor| %>
+        <tr>
+
+          <td><%= constructor[:constructorPosition]%></td>
+          <td><%= constructor[:constructorName]%></td>
+          <td><%= constructor[:constructorPoints]%></td>
+          <td><%= constructor[:constructorWins]%></td>
+
+        </tr>
+      <% end %>
+      <caption>Team Standings</caption>
+      </tbody>
+
+    </table>
+  </div>
+  </div>
