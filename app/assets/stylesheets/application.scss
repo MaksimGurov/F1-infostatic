@@ -44,6 +44,7 @@ th {
 .constructor_table {
   max-width: 50%;
   margin: auto;
+  margin-top: 3%;
 }
 
 .Site {
@@ -218,4 +219,13 @@ th {
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #f5f5f5;
+}
+
+.driver_standings {
+  max-width: 25%;
+}
+
+.full_standings {
+  margin-left: 45%;
+  margin-bottom: 5%;
 }
