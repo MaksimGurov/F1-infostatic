@@ -281,7 +281,7 @@ th {
 
 .podium .third {
   min-height: 100px;
-  background: linear-gradient(333deg, #7f401d 0%, #925812 13%, #f49b08 53%, #733c1b 100%);
+  background: linear-gradient(333deg, #7f401d 0%, #925812 13%, #96610a 53%, #733c1b 100%);
   font-size: 40px;
   border-top-right-radius: 25px;
 }
@@ -298,4 +298,9 @@ th {
 
 .driver_img {
   height: 180px;
+}
+
+.year {
+
+  text-align:center;
 }

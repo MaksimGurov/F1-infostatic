@@ -149,6 +149,54 @@ class F1dataCall
   end
 
 
+  def self.historical_drivers_standings(year)
+
+    url = "https://ergast.com/api/f1/#{year}/driverStandings.json"
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    data = JSON.parse(response)
+    season_standings_data = []
+    parsed_data = data['MRData']['StandingsTable']['StandingsLists'][0]['DriverStandings']
+    parsed_data.each do |driver|
+      driver
+      season_standings_data << {
+          driverPosition: "#{driver['position']}",
+          driverFirstName: "#{driver['Driver']['givenName']}",
+          driverLastName: "#{driver['Driver']['familyName']}",
+          driverCode: "#{driver['Driver']['code']}",
+          driverPoints: "#{driver['points']}",
+          driverURL: "#{driver['Driver']['url']}",
+          driverConstructor: "#{driver['Constructors'][0]['name']}",
+          driverNationality: "#{driver['Driver']['nationality']}"
+
+      }
+
+    end
+
+
+    season_standings_data
+
+  end
+
+
+  def self.historical_constructor_standings(year)
+
+    url = "http://ergast.com/api/f1/#{year}/constructorStandings.json"
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    data = JSON.parse(response)
+    constructor_standings_data = []
+    parsed_data = data['MRData']['StandingsTable']['StandingsLists'][0]['ConstructorStandings']
+    parsed_data.each do |constructor|
+      constructor_standings_data << {
+          constructorPosition: "#{constructor['position']}",
+          constructorPoints: "#{constructor['points']}",
+          constructorWins: "#{constructor['wins']}",
+          constructorName:"#{constructor['Constructor']['name']}"
+      }
+    end
+    constructor_standings_data
+  end
 
 
 
