@@ -1,6 +1,8 @@
 <table class="table table-striped border-primary  table-dark  .table-sm constructor_table">
 
-  <th>Position </th>
+  <th>Driver Profile</th>
+  <th> Position </th>
+  <th>Nationality </th>
   <th>First Name </th>
   <th>Last Name </th>
   <th>Team </th>
@@ -12,6 +14,7 @@
   <tbody>
   <% @data.each do |driver| %>
     <tr>
+      <td><%= link_to "Driver Profile", driver_bio_path(driver_full_name(driver[:driverFirstName],driver[:driverLastName])),  class: "btn btn-primary"%> </td>
       <td><%= driver[:driverPosition]%></td>
       <td> <span class="position"><%=  location_flag(driver[:driverNationality])%></span></td>
       <td><%= driver[:driverFirstName]%></td>

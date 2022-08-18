@@ -23,6 +23,7 @@
         <th>Team </th>
         <th>Code</th>
         <th>Points </th>
+        <th>Driver Profile </th>
 
         </tr>
         </thead>
@@ -36,6 +37,7 @@
             <td><%= driver[:driverConstructor]%></td>
             <td><%= driver[:driverCode]%></td>
             <td><span class="points"> <%= driver[:driverPoints]%></i></span></td>
+            <td><%= link_to "Driver Profile", driver_bio_path(driver_full_name(driver[:driverFirstName],driver[:driverLastName]))%> </td>
           </tr>
         <% end %>
         </tbody>
@@ -48,7 +50,7 @@
   <div class="col">
 
 
-    <table class="table caption-top table-striped border-primary  table-dark.table-sm constructor_table">
+    <table class="table caption-top table-striped border-primary  table-dark .table-sm constructor_table">
 
     <thead>
       <tr>
