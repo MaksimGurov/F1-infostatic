@@ -8,9 +8,9 @@ RSpec.describe "StaticPages", type: :request do
     end
   end
 
-  describe "GET /about" do
+  describe "GET /next" do
     it "returns http success" do
-      get "/static_pages/about"
+      get "/next"
       expect(response).to have_http_status(:success)
     end
   end
