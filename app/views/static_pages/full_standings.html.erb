@@ -13,6 +13,7 @@
   <% @data.each do |driver| %>
     <tr>
       <td><%= driver[:driverPosition]%></td>
+      <td> <span class="position"><%=  location_flag(driver[:driverNationality])%></span></td>
       <td><%= driver[:driverFirstName]%></td>
       <td><%= driver[:driverLastName]%></td>
       <td><%= driver[:driverConstructor]%></td>
