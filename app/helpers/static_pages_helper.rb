@@ -11,6 +11,19 @@ module StaticPagesHelper
     page.summary
   end
 
+
+  def pie_chart(constructor_data)
+
+    scores = []
+    @constructor_data.each do |constructor|
+      scores << constructor[:constructorPoints].to_i
+
+
+    end
+    p	scores
+  end
+
+
   def car_image(constructor)
     html = ''
     case constructor
