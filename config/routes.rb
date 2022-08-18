@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/raceresults/:id', to: 'static_pages#race_results',  as: 'results'
   get '/full_standings', to: 'static_pages#full_standings',  as: 'full_standings'
   get '/historical_data/:year', to: 'static_pages#historical_data',  as: 'historical_data'
+  get '/driver_bio/:driver', to: 'static_pages#driver_bio',  as: 'driver_bio'
   # Defines the root path route ("/")
   # root "articles#index"
 end
