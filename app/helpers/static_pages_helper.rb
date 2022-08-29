@@ -11,6 +11,11 @@ module StaticPagesHelper
     page.summary
   end
 
+  def driver_stats
+    doc = Nokogiri::HTML(URI.open("https://www.motorsportstats.com/driver/zhou-guanyu/summary/series/formula-one"))
+    doc.css(".styled__CareerStatisticsItemContainer-sc-kcf7p1-0")
+  end
+
 
   def pie_chart(constructor_data)
 
